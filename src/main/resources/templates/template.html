@@ -1,0 +1,21 @@
+<table class="table" style="border-collapse: collapse;">
+    <tbody>
+    <tr th:each="invoice : ${invoices}">
+        <td colspan="2" style="border: 1px solid black;" th:text="${invoice.seller}"></td>
+        <td colspan="2" style="border: 1px solid black;" th:text="${invoice.sellerAddress}"></td>
+        <td colspan="2" style="border: 1px solid black;" th:text="'GSTIN: ' + invoice.sellerGstin"></td>
+        <td colspan="2" style="border: 1px solid black;" th:text="${invoice.buyer}"></td>
+        <td colspan="2" style="border: 1px solid black;" th:text="${invoice.buyerAddress}"></td>
+        <td colspan="2" style="border: 1px solid black;" th:text="'GSTIN: ' + invoice.buyerGstin"></td>
+    </tr>
+    <tr>
+        <td colspan="14" style="border: 1px solid black; text-align: left;">Items</td>
+    </tr>
+    <tr th:each="invoice : ${invoices}">
+        <td colspan="2" style="border: 1px solid black;" th:text="${invoice.items[0].name}"></td>
+        <td colspan="2" style="border: 1px solid black;" th:text="${invoice.items[0].quantity}"></td>
+        <td colspan="2" style="border: 1px solid black;" th:text="${invoice.items[0].rate}"></td>
+        <td colspan="2" style="border: 1px solid black;" th:text="${invoice.items[0].amount}"></td>
+    </tr>
+    </tbody>
+</table>
